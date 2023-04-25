@@ -318,13 +318,17 @@ a {
   background-image: url('./images/icons.svg#icon-instagram');
 }
 
+.containers {
+  min-width: 1200px;
+}
+
 .thumb {
   position: relative;
   display: block;
   padding: 0;
   margin: 30px auto;
-  width: 500px;
-  height: 500px;
+  min-width: 500px;
+  min-height: 500px;
   /* border: 3px solid red; */
   border-radius: 8px;
   overflow: hidden;
