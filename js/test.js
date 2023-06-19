@@ -142,18 +142,218 @@
 
 // console.log(a, b, c, d, e);
 
-function getEvenNumbers(start, end) {
-   // Change code below this line
-let array = [];
-  for (let i = start; i <= end; i ++) {
-    if (i % 2 === 0) {
-      array.push(i);
+// function getEvenNumbers(start, end) {
+//    // Change code below this line
+// let array = [];
+//   for (let i = start; i <= end; i ++) {
+//     if (i % 2 === 0) {
+//       array.push(i);
+//     }
+//   }
+
+// return array;
+//     // Change code above this line
+// }
+  
+// console.log(getEvenNumbers(3, 10));
+// console.log(getEvenNumbers(15, 100));
+
+// let str = 'Fuck the Police!';
+
+// if (true) {
+//   console.log(str);
+
+//   if (true) {
+//     console.log(str);
+//     str = 'WTF?'
+//   }
+// }
+
+// function calculateTotalPrice(order) {
+//   total = order.reduce((sum, item) => {
+//     return sum + item;
+//   }, 0);
+//   return total;
+// }
+
+// console.log(calculateTotalPrice([10, 5, 30, 45, 55]));
+
+//{name: 'apple', price: 20}
+//{name: 'orange', price: 50}
+//{name: 'ananas', price: 70}
+//{name: 'mandarin', price: 110}
+
+
+const cart = {
+  items: [],
+  getItems() {                                    // Arbeiten!!!
+    const goods = [];
+    for (const item of this.items) {
+      goods.push({ 'name': item.name, 'quantity': item.quantity});
     }
+    return goods;
+  },
+  add(product) {                                  // Arbeiten!!!
+    for (const item of this.items) {
+      if (item.name === product.name) {
+        item.quantity += 1;
+        return;
+      }
+    }
+    product.quantity = 1;
+    this.items.push(product)
+  },
+  remove(productName) {                           // Arbeiten!!!
+    const tempCart = [];
+    for (const item of this.items) {
+      if (item.name !== productName) {
+        tempCart.push(item);
+      }
+    }
+    this.items = tempCart;
+  },
+  clear() {                                      // Arbeiten!!!
+    this.items = [];
+  },
+  countTotalPrice() {                             // Arbeiten!!!
+    let sum = 0;
+    for (const item of this.items) {
+      sum += (item.price * item.quantity);
+    }
+    return sum;
+  },
+  increaseQuantity(productName) {               // Arbeiten!!!
+    for (const item of this.items) {
+      if (item.name === productName) {
+        item.quantity += 1;
+        return;
+      }
+    }
+  },
+  decreaseQuantity(productName) {             // Arbeiten!!!
+    for (const item of this.items) {
+      if (item.name === productName) {
+        if (item.quantity >= 2) {
+          item.quantity -= 1;
+          return;
+        }
+        else  {
+          this.remove(item.name);
+        }    
+      }
+    }
+  },
+};
+
+cart.add({ name: 'apple', price: 20 });           // Arbeiten!!!
+cart.add({ name: 'orange', price: 50 });
+cart.add({ name: 'mandarin', price: 110 });
+cart.add({ name: 'mandarin', price: 110 });
+cart.add({ name: 'ananas', price: 70 });
+cart.add({ name: 'orange', price: 50 });
+console.table(cart.getItems());                  // Arbeiten!!!
+cart.remove({name: 'apple', price: 20 });
+cart.increaseQuantity('apple');                 // Arbeiten!!!
+cart.increaseQuantity('apple');
+cart.increaseQuantity('apple');
+console.table(cart.getItems());
+cart.decreaseQuantity('apple');                 // Arbeiten!!!
+cart.decreaseQuantity('apple');
+cart.decreaseQuantity('apple');
+cart.decreaseQuantity('apple');
+// cart.decreaseQuantity('apple');
+cart.decreaseQuantity('mandarin');
+console.table(cart.getItems());
+cart.remove('apple');                           // Arbeiten!!!
+cart.remove('orange');
+cart.remove('ananas');
+console.table(cart.getItems());
+// cart.clear();                              // Arbeiten!!!
+console.table(cart.getItems());
+console.log(cart.countTotalPrice());           // Arbeiten!!!
+console.log(cart);
+
+
+function countTotalSalary(salaries) {
+  let totalSalary = 0;
+  // Change code below this line
+  //  let salarys = [];
+  // salarys = Object.values(salaries);
+  // console.log(salarys);
+  for (const key in Object.values(salaries)) {
+    totalSalary += Object.values(salaries)[key];
   }
 
-return array;
-    // Change code above this line
+  // Change code above this line
+  return totalSalary;
 }
+
+console.log(countTotalSalary({}));
+console.log(countTotalSalary({ mango: 100, poly: 150, alfred: 80 }));
+console.log(countTotalSalary({ kiwi: 200, poly: 50, ajax: 150 }));
+
+// const products = [
+//   { name: "Radar", price: 1300, quantity: 4 },
+//   { name: "Scanner", price: 2700, quantity: 3 },
+//   { name: "Droid", price: 400, quantity: 7 },
+//   { name: "Grip", price: 1200, quantity: 9 },
+// ];
+
+// function getProductPrice(productName) {
+//   // Change code below this line
   
-  console.log(getEvenNumbers(3, 10));
-console.log(getEvenNumbers(15, 100));
+//   for (const product of products) {
+//     if (product.name === productName) {
+//         console.log(product.name);
+//         return product.price
+//     }    
+//   }
+//   return null;
+// };
+// console.log(getProductPrice("Grip"));
+// console.log(getProductPrice("Scanner"));
+// console.log(getProductPrice("Droid"));
+// console.log(getProductPrice("Engine"));
+
+const products = [
+  { name: "Radar", price: 1300, quantity: 4 },
+  { name: "Scanner", price: 2700, quantity: 3 },
+  { name: "Droid", price: 400, quantity: 7 },
+  { name: "Grip", price: 1200, quantity: 9 },
+];
+
+function getAllPropValues(propName) {
+  // Change code below this line
+  let values = [];
+  for (const product of products) {
+    if (product[propName]) {
+      values.push(product[propName])
+    }  
+}
+return values;
+
+  // Change code above this line
+}
+
+console.log(getAllPropValues("name"));
+console.log(getAllPropValues("quantity"));
+console.log(getAllPropValues("price"));
+console.log(getAllPropValues("category"));
+
+function calculateTotalPrice(productName) {
+  // Пиши код ниже этой строки
+  let totalPrice = 0;
+  for (const product of products) {
+    if (product.name === productName) {
+      return totalPrice = product.price * product.quantity
+    }
+  }
+  return totalPrice
+  // Пиши код выше этой строки
+}
+
+console.log(calculateTotalPrice('Radar'));
+console.log(calculateTotalPrice('Droid'));
+console.log(calculateTotalPrice('Grip'));
+console.log(calculateTotalPrice('Scanner'));
+console.log(calculateTotalPrice('Blaster'));
