@@ -203,14 +203,14 @@ const cart = {
     product.quantity = 1;
     this.items.push(product)
   },
-  remove(productName) {                           // Arbeiten!!!
-    const tempCart = [];
+  remove(productName) {                           // Arbeiten!!! 
     for (const item of this.items) {
-      if (item.name !== productName) {
-        tempCart.push(item);
+      if (item.name === productName) {
+        this.items.splice(this.items.indexOf(item), 1);
+        return;
       }
     }
-    this.items = tempCart;
+    return `This product ${productName} not in cart`;
   },
   clear() {                                      // Arbeiten!!!
     this.items = [];
@@ -274,23 +274,23 @@ console.log(cart.countTotalPrice());           // Arbeiten!!!
 console.log(cart);
 
 
-function countTotalSalary(salaries) {
-  let totalSalary = 0;
-  // Change code below this line
-  //  let salarys = [];
-  // salarys = Object.values(salaries);
-  // console.log(salarys);
-  for (const key in Object.values(salaries)) {
-    totalSalary += Object.values(salaries)[key];
-  }
+// function countTotalSalary(salaries) {
+//   let totalSalary = 0;
+//   // Change code below this line
+//   //  let salarys = [];
+//   // salarys = Object.values(salaries);
+//   // console.log(salarys);
+//   for (const key in Object.values(salaries)) {
+//     totalSalary += Object.values(salaries)[key];
+//   }
 
-  // Change code above this line
-  return totalSalary;
-}
+//   // Change code above this line
+//   return totalSalary;
+// }
 
-console.log(countTotalSalary({}));
-console.log(countTotalSalary({ mango: 100, poly: 150, alfred: 80 }));
-console.log(countTotalSalary({ kiwi: 200, poly: 50, ajax: 150 }));
+// console.log(countTotalSalary({}));
+// console.log(countTotalSalary({ mango: 100, poly: 150, alfred: 80 }));
+// console.log(countTotalSalary({ kiwi: 200, poly: 50, ajax: 150 }));
 
 // const products = [
 //   { name: "Radar", price: 1300, quantity: 4 },
@@ -315,45 +315,146 @@ console.log(countTotalSalary({ kiwi: 200, poly: 50, ajax: 150 }));
 // console.log(getProductPrice("Droid"));
 // console.log(getProductPrice("Engine"));
 
-const products = [
-  { name: "Radar", price: 1300, quantity: 4 },
-  { name: "Scanner", price: 2700, quantity: 3 },
-  { name: "Droid", price: 400, quantity: 7 },
-  { name: "Grip", price: 1200, quantity: 9 },
-];
+// const products = [
+//   { name: "Radar", price: 1300, quantity: 4 },
+//   { name: "Scanner", price: 2700, quantity: 3 },
+//   { name: "Droid", price: 400, quantity: 7 },
+//   { name: "Grip", price: 1200, quantity: 9 },
+// ];
 
-function getAllPropValues(propName) {
-  // Change code below this line
-  let values = [];
-  for (const product of products) {
-    if (product[propName]) {
-      values.push(product[propName])
-    }  
-}
-return values;
+// function getAllPropValues(propName) {
+//   // Change code below this line
+//   let values = [];
+//   for (const product of products) {
+//     if (product[propName]) {
+//       values.push(product[propName])
+//     }  
+// }
+// return values;
 
-  // Change code above this line
-}
+//   // Change code above this line
+// }
 
-console.log(getAllPropValues("name"));
-console.log(getAllPropValues("quantity"));
-console.log(getAllPropValues("price"));
-console.log(getAllPropValues("category"));
+// console.log(getAllPropValues("name"));
+// console.log(getAllPropValues("quantity"));
+// console.log(getAllPropValues("price"));
+// console.log(getAllPropValues("category"));
 
-function calculateTotalPrice(productName) {
-  // Пиши код ниже этой строки
-  let totalPrice = 0;
-  for (const product of products) {
-    if (product.name === productName) {
-      return totalPrice = product.price * product.quantity
-    }
-  }
-  return totalPrice
-  // Пиши код выше этой строки
-}
+// function calculateTotalPrice(productName) {
+//   // Пиши код ниже этой строки
+//   let totalPrice = 0;
+//   for (const product of products) {
+//     if (product.name === productName) {
+//       return totalPrice = product.price * product.quantity
+//     }
+//   }
+//   return totalPrice
+//   // Пиши код выше этой строки
+// }
 
-console.log(calculateTotalPrice('Radar'));
-console.log(calculateTotalPrice('Droid'));
-console.log(calculateTotalPrice('Grip'));
-console.log(calculateTotalPrice('Scanner'));
-console.log(calculateTotalPrice('Blaster'));
+// console.log(calculateTotalPrice('Radar'));
+// console.log(calculateTotalPrice('Droid'));
+// console.log(calculateTotalPrice('Grip'));
+// console.log(calculateTotalPrice('Scanner'));
+// console.log(calculateTotalPrice('Blaster'));
+
+// function slugify(title) {
+//   // Change code below this line
+// return title.toLowerCase().split(' ').join('-');
+
+
+//   // Change code above this line
+// }
+
+// console.log(slugify("Arrays for begginers"));
+// console.log(slugify("English for developer"));
+// console.log(slugify("Ten secrets of JavaScript"));
+
+// const highTemperatures = {
+//   yesterday: 28,
+//   today: 26,
+//   tomorrow: 33,
+// };
+// // Change code below this line
+
+// const { yesterday: highYesterday, today: highToday, tomorrow: highTomorrow, highIcon = "https://www.flaticon.com/svg/static/icons/svg/2204/2204346.svg", } = highTemperatures;
+
+
+// // Change code above this line
+// const meanTemperature = (highYesterday + highToday + highTomorrow) / 3;
+// console.log(meanTemperature);
+
+// const atTheOldToad = {
+//   potions: ["Speed potion", "Dragon breath", "Stone skin"],
+//   updatePotionName(oldName, newName) {
+//     // Change code below this line
+//     this.potions.splice(this.potions.indexOf(oldName), 1, newName);
+    
+
+//     // Change code above this line
+//   },
+// };
+
+// atTheOldToad.updatePotionName('Dragon breath', 'Polymorth');
+// console.log(atTheOldToad.potions);
+// console.log(atTheOldToad.updatePotionName('Stone skin', 'Invisibility'));
+// console.log(atTheOldToad.potions);
+
+// const atTheOldToad = {
+//   potions: [
+//     { name: "Speed potion", price: 460 },
+//     { name: "Dragon breath", price: 780 },
+//     { name: "Stone skin", price: 520 },
+//   ],
+//   // Change code below this line
+//   getPotions() {
+//     return this.potions;
+//   },
+//   addPotion(newPotion) {
+//     for (potion of this.potions) {
+//       if (potion.name === newPotion.name) {
+//         return `Error! Potion ${newPotion.name} is already in your inventory!`;
+//       }
+//     }
+//     this.potions.push(newPotion);
+//   },
+//   removePotion(potionName) {
+//     for (potion of this.potions) {
+//       if (potion.name === potionName) {
+//         this.potions.splice(this.potions.indexOf(potion), 1);
+//         return;
+//       }
+//     }
+//     return `Potion ${potionName.name} is not in inventory!`;
+//   },
+//   updatePotionName(oldName, newName) {
+//     for (potion of this.potions) {
+//       if (potion.name === oldName) {
+//         potion.name = newName;
+//         return
+//       }
+//     };
+//     return `Potion ${oldName} is not in inventory!`;
+//     // Change code above this line
+//   }
+// };
+
+// console.log(atTheOldToad.potions);
+// atTheOldToad.addPotion({ name: "Invisibility", price: 620 });
+// console.log(atTheOldToad.potions);
+// atTheOldToad.addPotion({ name: "Dragon breath", price: 700 });
+// console.log(atTheOldToad.addPotion({ name: "Dragon breath", price: 700 }));
+// atTheOldToad.addPotion({ name: "Stone skin", price: 240 });
+// console.log(atTheOldToad.potions);
+// atTheOldToad.addPotion({ name: "Dragon breath", price: 700 })
+// console.log(atTheOldToad.potions);
+// atTheOldToad.addPotion({ name: "Stone skin", price: 240 })
+// console.log(atTheOldToad.potions);
+// atTheOldToad.removePotion("Dragon breath");
+// console.log(atTheOldToad.potions);
+// atTheOldToad.removePotion("Speed potion");
+// console.log(atTheOldToad.potions);
+// atTheOldToad.updatePotionName("Dragon breath", "Polymorth");
+// console.log(atTheOldToad.potions);
+// atTheOldToad.updatePotionName("Stone skin", "Invulnerability potion");
+// console.log(atTheOldToad.potions);
