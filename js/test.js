@@ -184,94 +184,98 @@
 //{name: 'mandarin', price: 110}
 
 
-const cart = {
-  items: [],
-  getItems() {                                    // Arbeiten!!!
-    const goods = [];
-    for (const item of this.items) {
-      goods.push({ 'name': item.name, 'quantity': item.quantity});
-    }
-    return goods;
-  },
-  add(product) {                                  // Arbeiten!!!
-    for (const item of this.items) {
-      if (item.name === product.name) {
-        item.quantity += 1;
-        return;
-      }
-    }
-    product.quantity = 1;
-    this.items.push(product)
-  },
-  remove(productName) {                           // Arbeiten!!! 
-    for (const item of this.items) {
-      if (item.name === productName) {
-        this.items.splice(this.items.indexOf(item), 1);
-        return;
-      }
-    }
-    return `This product ${productName} not in cart`;
-  },
-  clear() {                                      // Arbeiten!!!
-    this.items = [];
-  },
-  countTotalPrice() {                             // Arbeiten!!!
-    let sum = 0;
-    for (const item of this.items) {
-      sum += (item.price * item.quantity);
-    }
-    return sum;
-  },
-  increaseQuantity(productName) {               // Arbeiten!!!
-    for (const item of this.items) {
-      if (item.name === productName) {
-        item.quantity += 1;
-        return;
-      }
-    }
-  },
-  decreaseQuantity(productName) {             // Arbeiten!!!
-    for (const item of this.items) {
-      if (item.name === productName) {
-        if (item.quantity >= 2) {
-          item.quantity -= 1;
-          return;
-        }
-        else  {
-          this.remove(item.name);
-        }    
-      }
-    }
-  },
-};
+// const cart = {
+//   items: [],
+//   getItems() {                                    // Arbeiten!!!
+//     // const goods = [];
+//     // for (const item of this.items) {
+//     //   goods.push({ 'name': item.name, 'quantity': item.quantity});
+//     // }
+//     // return goods;
+//       return this.items
+//   },
+//   add(product) {                                  // Arbeiten!!!
+//     for (const item of this.items) {
+//       if (item.name === product.name) {
+//         item.quantity += 1;
+//         return;
+//       }
+//     }
+//       const newProduct = {
+//           ...product,
+//           quantity: 1,
+//       }
+//     this.items.push(newProduct)
+//   },
+//   remove(productName) {                           // Arbeiten!!! 
+//     for (const {name} of this.items) {
+//       if (name === productName) {
+//         this.items.splice(this.items.indexOf(name), 1);
+//         return;
+//       }
+//     }
+//     return `This product ${productName} not in cart`;
+//   },
+//   clear() {                                      // Arbeiten!!!
+//     this.items = [];
+//   },
+//   countTotalPrice() {                             // Arbeiten!!!
+//     let sum = 0;
+//     for (const {price, quantity} of this.items) {
+//       sum += (price * quantity);
+//     }
+//     return sum;
+//   },
+//   increaseQuantity(productName) {               // Arbeiten!!!
+//     for (const item of this.items) {
+//       if (item.name === productName) {
+//         item.quantity += 1;
+//         return;
+//       }
+//     }
+//   },
+//   decreaseQuantity(productName) {             // Arbeiten!!!
+//     for (const item of this.items) {
+//       if (item.name === productName) {
+//         if (item.quantity >= 2) {
+//           item.quantity -= 1;
+//           return;
+//         }
+//         else  {
+//           this.remove(item.name);
+//         }    
+//       }
+//     }
+//   },
+// };
 
-cart.add({ name: 'apple', price: 20 });           // Arbeiten!!!
-cart.add({ name: 'orange', price: 50 });
-cart.add({ name: 'mandarin', price: 110 });
-cart.add({ name: 'mandarin', price: 110 });
-cart.add({ name: 'ananas', price: 70 });
-cart.add({ name: 'orange', price: 50 });
-console.table(cart.getItems());                  // Arbeiten!!!
-cart.remove({name: 'apple', price: 20 });
-cart.increaseQuantity('apple');                 // Arbeiten!!!
-cart.increaseQuantity('apple');
-cart.increaseQuantity('apple');
-console.table(cart.getItems());
-cart.decreaseQuantity('apple');                 // Arbeiten!!!
-cart.decreaseQuantity('apple');
-cart.decreaseQuantity('apple');
-cart.decreaseQuantity('apple');
+// cart.add({ name: 'apple', price: 20 });           // Arbeiten!!!
+// cart.add({ name: 'orange', price: 50 });
+// cart.add({ name: 'mandarin', price: 110 });
+// cart.add({ name: 'mandarin', price: 110 });
+// cart.add({ name: 'ananas', price: 70 });
+// cart.add({ name: 'orange', price: 50 });
+// console.table(cart.getItems());                  // Arbeiten!!!
+// cart.remove({name: 'apple', price: 20 });
+// cart.increaseQuantity('apple');                 // Arbeiten!!!
+// cart.increaseQuantity('apple');
+// cart.increaseQuantity('apple');
+// console.table(cart.getItems());
+// cart.decreaseQuantity('apple');                 // Arbeiten!!!
 // cart.decreaseQuantity('apple');
-cart.decreaseQuantity('mandarin');
-console.table(cart.getItems());
-cart.remove('apple');                           // Arbeiten!!!
-cart.remove('orange');
-cart.remove('ananas');
-console.table(cart.getItems());
-// cart.clear();                              // Arbeiten!!!
-console.table(cart.getItems());
-console.log(cart.countTotalPrice());           // Arbeiten!!!
-console.log(cart);
+// cart.decreaseQuantity('apple');
+// cart.decreaseQuantity('apple');
+// cart.decreaseQuantity('orange');
+// cart.decreaseQuantity('mandarin');
+// console.table(cart.getItems());
+// // cart.remove('apple');                           // Arbeiten!!!
+// cart.remove('orange');
+// cart.remove('ananas');
+// console.table(cart.getItems());
+// // // cart.clear();                              // Arbeiten!!!
+// console.table(cart.getItems());
+// console.log(cart.countTotalPrice());           // Arbeiten!!!
+// console.log(cart);
 
 
 // function countTotalSalary(salaries) {
@@ -458,3 +462,143 @@ console.log(cart);
 // console.log(atTheOldToad.potions);
 // atTheOldToad.updatePotionName("Stone skin", "Invulnerability potion");
 // console.log(atTheOldToad.potions);
+
+// const array = { a: 23, b: 200, c: 4, d: 870, e: 84, h: 105 };
+
+// const tempArray1 = Object.values(array);
+// const tempArray2 = Object.keys(array);
+// console.log(array);
+// console.log(tempArray1);
+// console.log(tempArray2);
+// console.log(Math.max(...tempArray1));
+// console.log(Object.values(array).indexOf(Math.max(...Object.values(array))));
+// console.log(Object.keys(array)[Object.values(array).indexOf(Math.max(...Object.values(array)))]);
+// const maxNumber = array[Object.values(array).indexOf(Math.max(...Object.values(array)))];
+
+
+// function findOutlier(integers) {
+//     const even = [];
+//     const odd = [];
+//     for (integer of integers) {
+//     if (integer % 2 === 0) {
+//       even.push(integer)
+//     } else {
+//       odd.push(integer)
+//     }
+//   };
+//   if (even.length === 1) {
+//     return `Should return: ${even[0]} (the only even number)`
+//   } else if (odd.length === 1) {
+//     return `Should return: ${odd[0]} (the only odd number)`
+//   } else return 'Error!'
+// }
+
+// console.log(findOutlier([0, 1, 2]));
+// console.log(findOutlier([1, 2, 3]));
+// console.log(findOutlier([2,6,8,10,3]));
+// console.log(findOutlier([0,0,3,0,0]));
+// console.log(findOutlier([1, 1, 0, 1, 1, 2]));
+// console.log(findOutlier([-32312819, 123803355, 75642447, 196126965, -7441701, -110842669, -152997047, -106071370, -21625599, 150316415, -81653649, -39806423, 171701899, 188858723, 140489333, -43241439, -150547855, -141847449, -192914617, -184603683, -8530593, -51197233, -180389063, 93988227, 116404177, 173551495, -150970067, -97015205, 179040847, -109069559, 80990129, 196785145, -141256885, 53251863, 61478957, -35873535, -87829277, 101012801]));
+// console.log(findOutlier([68111487,-2215066,62843108,119078308,-37551116,-161686198,64416974,424966,-192870324,-1778126,-155611210,14309928,-172822738,-91987664,-153689324,-170588194,-197273110,-137361992,-33038890,-149409228,-193009124,158822478,12346286,112389596,-40536444,159664788,-82837116,-117511292,-188978984,-99633672,71328636,-31565832,72098322,65879080]));
+
+
+// function duplicateCount(text) {
+//     const answer = {};
+//     const chars = text.toLowerCase().split('');
+//     let message = 'The set contains the same characters:';
+//     for (let x = 0; x < chars.length; x++) {
+//         if (!answer.hasOwnProperty(chars[x])) {
+//             answer[chars[x]] = 1;
+//         } else {
+//             answer[chars[x]] += 1;
+//         }
+//     }
+//     for (key of Object.keys(answer)) {
+//         if (answer[key] > 1) {
+//             message = message + ` "${key}": count ${answer[key]},`
+//         }
+//     }
+//     return message + ' other count 1.'
+// }
+
+// console.log(duplicateCount('object'));
+// console.log(duplicateCount('Должна возвращать отрицательное значение'));
+// console.log(duplicateCount('идти перед вторым, положительное значение, если второй '));
+// console.log(duplicateCount('аргумент должен идти перед первым, и 0, если порядок элементов не важен Вот пример с функцией сравнения для сортировки в порядке убывания:'));
+
+// function sumTwoSmallestNumbers(numbers) { 
+//     let numMin = [];
+//     for (let i = 0; i <= 1; i++) {
+//         numMin[i] = (numbers.splice(numbers.indexOf(Math.min(...numbers)), 1));
+//     }
+//     return `"Sum should be ${Number(numMin[0]) + Number(numMin[1])}"`; 
+// }
+
+// console.log(sumTwoSmallestNumbers([5, 8, 12, 19, 22]));
+// console.log(sumTwoSmallestNumbers([15, 28, 4, 2, 43]));
+// console.log(sumTwoSmallestNumbers([3, 87, 45, 12, 7]));
+// console.log(sumTwoSmallestNumbers([23, 71, 33, 82, 1]));
+// console.log(sumTwoSmallestNumbers([52, 76, 14, 12, 4]));
+
+// function longest(s1, s2) {
+//   const sum = s1 + s2;
+//   let s3 = '';
+//   for (let i = 0; i < sum.length; i += 1) {
+//     if (!s3.includes(sum[i])) {
+//       s3 = s3.concat(sum[i]);
+//     }
+//   }
+//   return `Answer ${s3.split('').sort().join('')}`;
+// }
+
+// a = "Take 2 strings s1 and s2 including only lterwyyrtytretters from qwertyuiopa to z. Return a new sorted string, the "
+// b = "-longest possible, containing distinct 13 letters - 490each taken only once - coming from s1 or s2."
+
+// console.log(longest(a, b));
+
+// function digPow(n, p){
+//   let strNumber = n.toString().split('');
+//   let sum = 0;
+//   for (let i = 0; i < strNumber.length; i++) {
+//     sum += Number(strNumber[i]) ** (p + i);
+//   }
+//   if ((sum / n) >= 1) {
+//     return `should return minimum ${(sum / n).toFixed(0)}`
+//   }
+//   return `should return -1`;
+// }
+
+// console.log(digPow(89, 1)); // should return 1 since 8¹ + 9² = 89 = 89 * 1
+// console.log(digPow(92, 1)); // should return -1 since there is no k such as 9¹ + 2² equals 92 * k
+// console.log(digPow(695, 2));
+// console.log(digPow(46288, 3));
+// console.log(digPow(686859, 3));
+// console.log(digPow(67898, 4));
+// console.log(digPow(462, 3));
+
+const pizzaPalace = {
+  pizzas: ['Ultracheese', 'Smoked', 'Four meats'],
+  order(pizzaName, makePizza, onOrderError) {
+    if (!this.pizzas.includes(pizzaName)) {
+      return onOrderError(`There is no pizza with the name ${pizzaName} in the assortment.`);
+    }       
+      return makePizza(pizzaName);
+      }
+};
+
+// Callback for onSuccess
+function makePizza(pizzaName) {
+  return `Your order is accepted. Cooking pizza ${pizzaName}.`;
+}
+
+// Callback for onError
+function onOrderError(error) {
+  return `Error! ${error}`;
+}
+// Method calls with callbacks
+console.log(pizzaPalace.order('Smoked', makePizza, onOrderError));
+console.log(pizzaPalace.order('Four meats', makePizza, onOrderError));
+console.log(pizzaPalace.order('Big Mike', makePizza, onOrderError));
+console.log(pizzaPalace.order('Vienna', makePizza, onOrderError));
+
+
