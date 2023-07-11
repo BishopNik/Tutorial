@@ -576,137 +576,152 @@
 // console.log(digPow(67898, 4));
 // console.log(digPow(462, 3));
 
-const pizzaPalace = {
-  pizzas: ['Ultracheese', 'Smoked', 'Four meats'],
-  order(pizzaName, makePizza, onOrderError) {
-    if (!this.pizzas.includes(pizzaName)) {
-      return onOrderError(`There is no pizza with the name ${pizzaName} in the assortment.`);
-    }       
-      return makePizza(pizzaName);
-      }
+// const pizzaPalace = {
+//   pizzas: ['Ultracheese', 'Smoked', 'Four meats'],
+//   order(pizzaName, makePizza, onOrderError) {
+//     if (!this.pizzas.includes(pizzaName)) {
+//       return onOrderError(`There is no pizza with the name ${pizzaName} in the assortment.`);
+//     }       
+//       return makePizza(pizzaName);
+//       }
+// };
+
+// // Callback for onSuccess
+// function makePizza(pizzaName) {
+//   return `Your order is accepted. Cooking pizza ${pizzaName}.`;
+// }
+
+// // Callback for onError
+// function onOrderError(error) {
+//   return `Error! ${error}`;
+// }
+// // Method calls with callbacks
+// console.log(pizzaPalace.order('Smoked', makePizza, onOrderError));
+// console.log(pizzaPalace.order('Four meats', makePizza, onOrderError));
+// console.log(pizzaPalace.order('Big Mike', makePizza, onOrderError));
+// console.log(pizzaPalace.order('Vienna', makePizza, onOrderError));
+
+// const users = [
+//   {
+//     name: "Moore Hensley",
+//     email: "moorehensley@indexia.com",
+//     eyeColor: "blue",
+//     friends: ["Sharron Pace"],
+//     isActive: false,
+//     balance: 2811,
+//     gender: "male"
+//   },
+//   {
+//     name: "Sharlene Bush",
+//     email: "sharlenebush@tubesys.com",
+//     eyeColor: "blue",
+//     friends: ["Briana Decker", "Sharron Pace"],
+//     isActive: true,
+//     balance: 3821,
+//     gender: "female"
+//   },
+//   {
+//     name: "Ross Vazquez",
+//     email: "rossvazquez@xinware.com",
+//     eyeColor: "green",
+//     friends: ["Marilyn Mcintosh", "Padilla Garrison", "Naomi Buckner"],
+//     isActive: false,
+//     balance: 3793,
+//     gender: "male"
+//   },
+//   {
+//     name: "Elma Head",
+//     email: "elmahead@omatom.com",
+//     eyeColor: "green",
+//     friends: ["Goldie Gentry", "Aisha Tran"],
+//     isActive: true,
+//     balance: 2278,
+//     gender: "female"
+//   },
+//   {
+//     name: "Carey Barr",
+//     email: "careybarr@nurali.com",
+//     eyeColor: "blue",
+//     friends: ["Jordan Sampson", "Eddie Strong", "Adrian Cross"],
+//     isActive: true,
+//     balance: 3951,
+//     gender: "male"
+//   },
+//   {
+//     name: "Blackburn Dotson",
+//     email: "blackburndotson@furnigeer.com",
+//     eyeColor: "brown",
+//     friends: ["Jacklyn Lucas", "Linda Chapman", "Adrian Cross", "Solomon Fokes"],
+//     isActive: false,
+//     balance: 1498,
+//     gender: "male"
+//   },
+//   {
+//     name: "Sheree Anthony",
+//     email: "shereeanthony@kog.com",
+//     eyeColor: "brown",
+//     friends: ["Goldie Gentry", "Briana Decker"],
+//     isActive: true,
+//     balance: 2764,
+//     gender: "female"
+//   }
+// ]
+// const calculateTotalBalance = users.reduce((totalBalance, user) => totalBalance + user.balance, 0);
+// console.log("🚀 ~ file: task-01.js:67 ~ calculateTotalBalance:", calculateTotalBalance)
+
+// const students = [
+//   { name: "Манго", score: 83 },
+//   { name: "Поли", score: 59 },
+//   { name: "Аякс", score: 37 },
+//   { name: "Киви", score: 94 },
+// ];
+
+// const inAscendingScoreOrder = [...students].sort(
+//   (firstStudent, secondStudent) => firstStudent.score - secondStudent.score
+// );
+// console.log("🚀 ~ file: task-01.js:9 ~ inAscendingScoreOrder:", inAscendingScoreOrder)
+
+// const inDescendingScoreOrder = [...students].sort(
+//   (firstStudent, secondStudent) => secondStudent.score - firstStudent.score
+// );
+// console.log("🚀 ~ file: task-01.js:17 ~ inDescendingScoreOrder:", inDescendingScoreOrder)
+
+// const inAlphabeticalOrder = [...students].sort((firstStudent, secondStudent) =>
+//   firstStudent.name.localeCompare(secondStudent.name)
+// );
+// console.log("🚀 ~ file: task-01.js:22 ~ inAlphabeticalOrder:", inAlphabeticalOrder)
+
+// const inAscendingScoreOrder1 = students.sort(
+//   (firstStudent, secondStudent) => firstStudent.score - secondStudent.score
+// );
+// console.log("🚀 ~ file: task-01.js:9 ~ inAscendingScoreOrder1:", inAscendingScoreOrder1)
+
+// const inDescendingScoreOrder1 = students.sort(
+//   (firstStudent, secondStudent) => secondStudent.score - firstStudent.score
+// );
+// console.log("🚀 ~ file: task-01.js:17 ~ inDescendingScoreOrder1:", inDescendingScoreOrder1)
+
+// const inAlphabeticalOrder1 = students.sort((firstStudent, secondStudent) =>
+//   firstStudent.name.localeCompare(secondStudent.name)
+// );
+// console.log("🚀 ~ file: task-01.js:22 ~ inAlphabeticalOrder:", inAlphabeticalOrder1)
+
+// console.log(inAscendingScoreOrder1 === inDescendingScoreOrder1 && inDescendingScoreOrder1 === inAlphabeticalOrder1);
+
+const tesla = {
+    brand: "Tesla",
+    speed: 70,
+  controlSpeed(maxSpeed) {
+    const speedSensor = (maxSpeed) =>
+      this.speed >= maxSpeed ? console.log(`Автомобіль ${this.brand} рухається з безпечною швидкістю`) : console.log(`${this.brand} - Перевищено безпечну швидкість! 😨`);
+    speedSensor(maxSpeed);   
+    }
 };
 
-// Callback for onSuccess
-function makePizza(pizzaName) {
-  return `Your order is accepted. Cooking pizza ${pizzaName}.`;
+const audi = {
+    brand: 'Audi',
+    speed: 70,
 }
 
-// Callback for onError
-function onOrderError(error) {
-  return `Error! ${error}`;
-}
-// Method calls with callbacks
-console.log(pizzaPalace.order('Smoked', makePizza, onOrderError));
-console.log(pizzaPalace.order('Four meats', makePizza, onOrderError));
-console.log(pizzaPalace.order('Big Mike', makePizza, onOrderError));
-console.log(pizzaPalace.order('Vienna', makePizza, onOrderError));
-
-const users = [
-  {
-    name: "Moore Hensley",
-    email: "moorehensley@indexia.com",
-    eyeColor: "blue",
-    friends: ["Sharron Pace"],
-    isActive: false,
-    balance: 2811,
-    gender: "male"
-  },
-  {
-    name: "Sharlene Bush",
-    email: "sharlenebush@tubesys.com",
-    eyeColor: "blue",
-    friends: ["Briana Decker", "Sharron Pace"],
-    isActive: true,
-    balance: 3821,
-    gender: "female"
-  },
-  {
-    name: "Ross Vazquez",
-    email: "rossvazquez@xinware.com",
-    eyeColor: "green",
-    friends: ["Marilyn Mcintosh", "Padilla Garrison", "Naomi Buckner"],
-    isActive: false,
-    balance: 3793,
-    gender: "male"
-  },
-  {
-    name: "Elma Head",
-    email: "elmahead@omatom.com",
-    eyeColor: "green",
-    friends: ["Goldie Gentry", "Aisha Tran"],
-    isActive: true,
-    balance: 2278,
-    gender: "female"
-  },
-  {
-    name: "Carey Barr",
-    email: "careybarr@nurali.com",
-    eyeColor: "blue",
-    friends: ["Jordan Sampson", "Eddie Strong", "Adrian Cross"],
-    isActive: true,
-    balance: 3951,
-    gender: "male"
-  },
-  {
-    name: "Blackburn Dotson",
-    email: "blackburndotson@furnigeer.com",
-    eyeColor: "brown",
-    friends: ["Jacklyn Lucas", "Linda Chapman", "Adrian Cross", "Solomon Fokes"],
-    isActive: false,
-    balance: 1498,
-    gender: "male"
-  },
-  {
-    name: "Sheree Anthony",
-    email: "shereeanthony@kog.com",
-    eyeColor: "brown",
-    friends: ["Goldie Gentry", "Briana Decker"],
-    isActive: true,
-    balance: 2764,
-    gender: "female"
-  }
-]
-const calculateTotalBalance = users.reduce((totalBalance, user) => totalBalance + user.balance, 0);
-console.log("🚀 ~ file: task-01.js:67 ~ calculateTotalBalance:", calculateTotalBalance)
-
-const students = [
-  { name: "Манго", score: 83 },
-  { name: "Поли", score: 59 },
-  { name: "Аякс", score: 37 },
-  { name: "Киви", score: 94 },
-];
-
-const inAscendingScoreOrder = [...students].sort(
-  (firstStudent, secondStudent) => firstStudent.score - secondStudent.score
-);
-console.log("🚀 ~ file: task-01.js:9 ~ inAscendingScoreOrder:", inAscendingScoreOrder)
-
-const inDescendingScoreOrder = [...students].sort(
-  (firstStudent, secondStudent) => secondStudent.score - firstStudent.score
-);
-console.log("🚀 ~ file: task-01.js:17 ~ inDescendingScoreOrder:", inDescendingScoreOrder)
-
-const inAlphabeticalOrder = [...students].sort((firstStudent, secondStudent) =>
-  firstStudent.name.localeCompare(secondStudent.name)
-);
-console.log("🚀 ~ file: task-01.js:22 ~ inAlphabeticalOrder:", inAlphabeticalOrder)
-
-const inAscendingScoreOrder1 = students.sort(
-  (firstStudent, secondStudent) => firstStudent.score - secondStudent.score
-);
-console.log("🚀 ~ file: task-01.js:9 ~ inAscendingScoreOrder1:", inAscendingScoreOrder1)
-
-const inDescendingScoreOrder1 = students.sort(
-  (firstStudent, secondStudent) => secondStudent.score - firstStudent.score
-);
-console.log("🚀 ~ file: task-01.js:17 ~ inDescendingScoreOrder1:", inDescendingScoreOrder1)
-
-const inAlphabeticalOrder1 = students.sort((firstStudent, secondStudent) =>
-  firstStudent.name.localeCompare(secondStudent.name)
-);
-console.log("🚀 ~ file: task-01.js:22 ~ inAlphabeticalOrder:", inAlphabeticalOrder1)
-
-console.log(inAscendingScoreOrder1 === inDescendingScoreOrder1 && inDescendingScoreOrder1 === inAlphabeticalOrder1);
-
-
-
+tesla.controlSpeed(60);
+tesla.controlSpeed.call(audi, 100);
