@@ -708,20 +708,62 @@
 
 // console.log(inAscendingScoreOrder1 === inDescendingScoreOrder1 && inDescendingScoreOrder1 === inAlphabeticalOrder1);
 
-const tesla = {
-    brand: "Tesla",
-    speed: 70,
-  controlSpeed(maxSpeed) {
-    const speedSensor = (maxSpeed) =>
-      this.speed >= maxSpeed ? console.log(`Автомобіль ${this.brand} рухається з безпечною швидкістю`) : console.log(`${this.brand} - Перевищено безпечну швидкість! 😨`);
-    speedSensor(maxSpeed);   
-    }
-};
+// const tesla = {
+//     brand: "Tesla",
+//     speed: 70,
+//   controlSpeed(maxSpeed) {
+//     const speedSensor = (maxSpeed) =>
+//       this.speed >= maxSpeed ? console.log(`Автомобіль ${this.brand} рухається з безпечною швидкістю`) : console.log(`${this.brand} - Перевищено безпечну швидкість! 😨`);
+//     speedSensor(maxSpeed);   
+//     }
+// };
 
-const audi = {
-    brand: 'Audi',
-    speed: 70,
+// const audi = {
+//     brand: 'Audi',
+//     speed: 70,
+// }
+
+// tesla.controlSpeed(60);
+// tesla.controlSpeed.call(audi, 100);
+
+// const apartment = {};
+
+// apartment.location = {};
+// apartment.location.country = "Jamaica";
+// console.log("🚀 ~ file: test.js:730 ~ apartment:", apartment)
+
+class Kvadrat {
+  #height;
+  #width;
+
+  constructor({ height, width } = {}) {
+    this.#height = height;
+    this.#width = width;
+  }
+
+  get size() {
+    console.log(`width ${this.#width} px, height ${this.#height} px`);
+    return `width ${this.#width} px, height ${this.#height} px`;
+  }
+
+  set dimensions(sizeValue) {
+    const type = sizeValue[0];
+    const num = Number(sizeValue.slice(1));
+    if (type === 'w') {
+      this.#width = num;
+    } else if (type === 'h') {
+      this.#height = num;
+    } else {
+      console.log('error!');
+    }
+  }
 }
 
-tesla.controlSpeed(60);
-tesla.controlSpeed.call(audi, 100);
+const newKv = new Kvadrat({ height: 5, width: 5 });
+console.log(newKv);
+newKv.size;
+newKv.dimensions = 'w24';
+newKv.size;
+newKv.dimensions = 'h123';
+newKv.size;
+newKv.dimensions = 'm123';
