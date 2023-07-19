@@ -1,3 +1,5 @@
+/** @format */
+
 // const min = 2;
 // const max = 50;
 // let total = 0;
@@ -25,7 +27,7 @@
 // console.log(getExtremeElements(["apple", "peach", "pear", "banana"]));
 
 // function calculateEngravingPrice(message, pricePerWord) {
-//    // Change code below this line 
+//    // Change code below this line
 //     return message.split(' ').length * pricePerWord;
 //    // Change code above this line
 // }
@@ -63,7 +65,7 @@
 //     return firstArray.concat(secondArray).slice(0, maxLength);
 //     // Change code above this line
 // }
-  
+
 // console.log(makeArray(["Mango", "Poly"], ["Ajax", "Chelsea"], 3));
 // console.log(makeArray(["Mango", "Poly", "Houston"], ["Ajax", "Chelsea"], 4));
 // console.log(makeArray(["Earth", "Jupiter"], ["Neptune", "Uranus", "Venus"], 0));
@@ -154,7 +156,7 @@
 // return array;
 //     // Change code above this line
 // }
-  
+
 // console.log(getEvenNumbers(3, 10));
 // console.log(getEvenNumbers(15, 100));
 
@@ -183,7 +185,6 @@
 //{name: 'ananas', price: 70}
 //{name: 'mandarin', price: 110}
 
-
 // const cart = {
 //   items: [],
 //   getItems() {                                    // Arbeiten!!!
@@ -207,7 +208,7 @@
 //       }
 //     this.items.push(newProduct)
 //   },
-//   remove(productName) {                           // Arbeiten!!! 
+//   remove(productName) {                           // Arbeiten!!!
 //     for (const {name} of this.items) {
 //       if (name === productName) {
 //         this.items.splice(this.items.indexOf(name), 1);
@@ -243,7 +244,7 @@
 //         }
 //         else  {
 //           this.remove(item.name);
-//         }    
+//         }
 //       }
 //     }
 //   },
@@ -277,7 +278,6 @@
 // console.log(cart.countTotalPrice());           // Arbeiten!!!
 // console.log(cart);
 
-
 // function countTotalSalary(salaries) {
 //   let totalSalary = 0;
 //   // Change code below this line
@@ -305,12 +305,12 @@
 
 // function getProductPrice(productName) {
 //   // Change code below this line
-  
+
 //   for (const product of products) {
 //     if (product.name === productName) {
 //         console.log(product.name);
 //         return product.price
-//     }    
+//     }
 //   }
 //   return null;
 // };
@@ -332,7 +332,7 @@
 //   for (const product of products) {
 //     if (product[propName]) {
 //       values.push(product[propName])
-//     }  
+//     }
 // }
 // return values;
 
@@ -366,7 +366,6 @@
 //   // Change code below this line
 // return title.toLowerCase().split(' ').join('-');
 
-
 //   // Change code above this line
 // }
 
@@ -383,7 +382,6 @@
 
 // const { yesterday: highYesterday, today: highToday, tomorrow: highTomorrow, highIcon = "https://www.flaticon.com/svg/static/icons/svg/2204/2204346.svg", } = highTemperatures;
 
-
 // // Change code above this line
 // const meanTemperature = (highYesterday + highToday + highTomorrow) / 3;
 // console.log(meanTemperature);
@@ -393,7 +391,6 @@
 //   updatePotionName(oldName, newName) {
 //     // Change code below this line
 //     this.potions.splice(this.potions.indexOf(oldName), 1, newName);
-    
 
 //     // Change code above this line
 //   },
@@ -475,7 +472,6 @@
 // console.log(Object.keys(array)[Object.values(array).indexOf(Math.max(...Object.values(array)))]);
 // const maxNumber = array[Object.values(array).indexOf(Math.max(...Object.values(array)))];
 
-
 // function findOutlier(integers) {
 //     const even = [];
 //     const odd = [];
@@ -501,7 +497,6 @@
 // console.log(findOutlier([-32312819, 123803355, 75642447, 196126965, -7441701, -110842669, -152997047, -106071370, -21625599, 150316415, -81653649, -39806423, 171701899, 188858723, 140489333, -43241439, -150547855, -141847449, -192914617, -184603683, -8530593, -51197233, -180389063, 93988227, 116404177, 173551495, -150970067, -97015205, 179040847, -109069559, 80990129, 196785145, -141256885, 53251863, 61478957, -35873535, -87829277, 101012801]));
 // console.log(findOutlier([68111487,-2215066,62843108,119078308,-37551116,-161686198,64416974,424966,-192870324,-1778126,-155611210,14309928,-172822738,-91987664,-153689324,-170588194,-197273110,-137361992,-33038890,-149409228,-193009124,158822478,12346286,112389596,-40536444,159664788,-82837116,-117511292,-188978984,-99633672,71328636,-31565832,72098322,65879080]));
 
-
 // function duplicateCount(text) {
 //     const answer = {};
 //     const chars = text.toLowerCase().split('');
@@ -526,12 +521,12 @@
 // console.log(duplicateCount('идти перед вторым, положительное значение, если второй '));
 // console.log(duplicateCount('аргумент должен идти перед первым, и 0, если порядок элементов не важен Вот пример с функцией сравнения для сортировки в порядке убывания:'));
 
-// function sumTwoSmallestNumbers(numbers) { 
+// function sumTwoSmallestNumbers(numbers) {
 //     let numMin = [];
 //     for (let i = 0; i <= 1; i++) {
 //         numMin[i] = (numbers.splice(numbers.indexOf(Math.min(...numbers)), 1));
 //     }
-//     return `"Sum should be ${Number(numMin[0]) + Number(numMin[1])}"`; 
+//     return `"Sum should be ${Number(numMin[0]) + Number(numMin[1])}"`;
 // }
 
 // console.log(sumTwoSmallestNumbers([5, 8, 12, 19, 22]));
@@ -581,7 +576,7 @@
 //   order(pizzaName, makePizza, onOrderError) {
 //     if (!this.pizzas.includes(pizzaName)) {
 //       return onOrderError(`There is no pizza with the name ${pizzaName} in the assortment.`);
-//     }       
+//     }
 //       return makePizza(pizzaName);
 //       }
 // };
@@ -714,7 +709,7 @@
 //   controlSpeed(maxSpeed) {
 //     const speedSensor = (maxSpeed) =>
 //       this.speed >= maxSpeed ? console.log(`Автомобіль ${this.brand} рухається з безпечною швидкістю`) : console.log(`${this.brand} - Перевищено безпечну швидкість! 😨`);
-//     speedSensor(maxSpeed);   
+//     speedSensor(maxSpeed);
 //     }
 // };
 
@@ -732,38 +727,61 @@
 // apartment.location.country = "Jamaica";
 // console.log("🚀 ~ file: test.js:730 ~ apartment:", apartment)
 
-class Kvadrat {
-  #height;
-  #width;
+// class Kvadrat {
+//   #height;
+//   #width;
 
-  constructor({ height, width } = {}) {
-    this.#height = height;
-    this.#width = width;
-  }
+//   constructor({ height, width } = {}) {
+//     this.#height = height;
+//     this.#width = width;
+//   }
 
-  get size() {
-    console.log(`width ${this.#width} px, height ${this.#height} px`);
-    return `width ${this.#width} px, height ${this.#height} px`;
-  }
+//   get size() {
+//     console.log(`width ${this.#width} px, height ${this.#height} px`);
+//     return `width ${this.#width} px, height ${this.#height} px`;
+//   }
 
-  set dimensions(sizeValue) {
-    const type = sizeValue[0];
-    const num = Number(sizeValue.slice(1));
-    if (type === 'w') {
-      this.#width = num;
-    } else if (type === 'h') {
-      this.#height = num;
-    } else {
-      console.log('error!');
-    }
-  }
+//   set dimensions(sizeValue) {
+//     const type = sizeValue[0];
+//     const num = Number(sizeValue.slice(1));
+//     if (type === 'w') {
+//       this.#width = num;
+//     } else if (type === 'h') {
+//       this.#height = num;
+//     } else {
+//       console.log('error!');
+//     }
+//   }
+// }
+
+// const newKv = new Kvadrat({ height: 5, width: 5 });
+// console.log(newKv);
+// newKv.size;
+// newKv.dimensions = 'w24';
+// newKv.size;
+// newKv.dimensions = 'h123';
+// newKv.size;
+// newKv.dimensions = 'm123';
+
+// function tribonacci(signature, n) {
+//   const arrayTribon = [];
+//   for (let i = 0; i < n; i++) {
+//     if (signature[i] !== undefined) {
+//       arrayTribon.push(signature[i]);
+//       console.log(arrayTribon);
+//     }
+//   }
+
+//   for (let i = 0; arrayTribon.length < n; i++) {
+//     let sum = 0;
+//     sum = arrayTribon[i] + arrayTribon[i + 1] + arrayTribon[i + 2];
+//     arrayTribon.push(sum);
+//   }
+//   return arrayTribon;
+// }
+
+// console.log(tribonacci([1, 1, 1], 10));
+
+function OnCLick(event) {
+	console.log('Hi!');
 }
-
-const newKv = new Kvadrat({ height: 5, width: 5 });
-console.log(newKv);
-newKv.size;
-newKv.dimensions = 'w24';
-newKv.size;
-newKv.dimensions = 'h123';
-newKv.size;
-newKv.dimensions = 'm123';
