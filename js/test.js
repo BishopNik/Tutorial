@@ -782,6 +782,255 @@
 
 // console.log(tribonacci([1, 1, 1], 10));
 
-function OnCLick(event) {
-	console.log('Hi!');
-}
+// function OnCLick(event) {
+// 	console.log('Hi!');
+// }
+
+// function solution(string) {
+// 	let idx = 0;
+// 	const words = [];
+// 	for (let i = 0; i < string.length; i++) {
+// 		if (string[i] === string[i].toUpperCase()) {
+// 			words.push(string.slice(idx, i));
+// 			idx = i;
+// 		}
+// 		if (i + 1 === string.length) {
+// 			words.push(string.slice(idx, i + 1));
+// 		}
+// 	}
+// 	console.log(words.join(' '));
+// 	console.log(string);
+// 	return words.join(' ');
+// }
+
+// solution('makeStringmakeStringmakeStringmakeString');
+
+// function highAndLow(numbers) {
+// 	// const numArray = numbers.split(' ').map(Number);
+
+// 	const num = numbers
+// 		.split(' ')
+// 		.map(Number)
+// 		.sort((a, b) => a - b);
+// 	return `${num[0]} ${num[num.length - 1]}`;
+// }
+
+// console.log(highAndLow('1 4 -5 6'));
+
+// function sortArray(array) {
+// 	let j = 0;
+// 	const array2 = [...array].filter(num => num % 2 !== 0).sort((a, b) => a - b);
+// 	for (let i = 0; i < array.length; i++) {
+// 		if (array[i] % 2 !== 0) {
+// 			array[i] = array2[j];
+// 			j += 1;
+// 		}
+// 	}
+// 	return array;
+// }
+
+// console.log(sortArray([5, 3, 2, 8, 1, 4]));
+
+// function domainName(url) {
+// const idxArr = [];
+// if (!url.includes('http') && !url.includes('www')) {
+// 	idxArr.push(0);
+// }
+// for (let i = 0; i < url.length; i++) {
+// 	if (url[i] === '.') {
+// 		idxArr.push(i + 1);
+// 	} else if (url[i] === '/' && url[i + 1] === '/' && !url.includes('www')) {
+// 		idxArr.push(i + 2);
+// 	}
+// }
+// return idxArr.length > 1 ? url.slice(idxArr[0], idxArr[1] - 1) : 'no damain';
+// }
+
+// function domainName(url) {
+// 	const regex = /^(http:\/\/|https:\/\/)/;
+// 	const protocolFreeUrl = url.replace(regex, '').replace('www.', '');
+// 	const idxEnd = protocolFreeUrl.indexOf('.');
+// 	return protocolFreeUrl.slice(0, idxEnd);
+// }
+
+// console.log(domainName('http://github.com/carbonfive/raygun'));
+// console.log(domainName('www.xakep.ru'));
+// console.log(domainName('http://www.jzodzprg.de'));
+
+// function solution(number) {
+// 	const numInp = [];
+// 	let t = Math.floor(number / 1000);
+// 	let s = Math.floor((number - t * 1000) / 100);
+// 	let x = Math.floor((number - t * 1000 - s * 100) / 10);
+// 	let y = Math.floor(number - t * 1000 - s * 100 - x * 10);
+
+// 	if (t) {
+// 		rymNumber(t, 1000, numInp);
+// 	}
+// 	if (s) {
+// 		rymNumber(s, 100, numInp);
+// 	}
+// 	if (x) {
+// 		rymNumber(x, 10, numInp);
+// 	}
+// 	if (y) {
+// 		rymNumber(y, 1, numInp);
+// 	}
+
+// 	return `${number} should return '${numInp.join('')}'`;
+// }
+
+// function rymNumber(num, dec, numInp) {
+// 	const arrNum = {
+// 		1: 'I',
+// 		5: 'V',
+// 		10: 'X',
+// 		50: 'L',
+// 		100: 'C',
+// 		500: 'D',
+// 		1000: 'M',
+// 	};
+// 	const z = num - 5;
+
+// 	if (dec === 1000) {
+// 		for (let i = 0; i < num; i++) {
+// 			numInp.push(arrNum[1 * dec]);
+// 		}
+// 		return numInp;
+// 	}
+// 	if (num <= 3) {
+// 		for (let i = 0; i < num; i++) {
+// 			numInp.push(arrNum[1 * dec]);
+// 		}
+// 	} else if (num === 9) {
+// 		numInp.push(arrNum[1 * dec], arrNum[10 * dec]);
+// 	} else if (z >= 0) {
+// 		numInp.push(arrNum[5 * dec]);
+// 		for (let i = 0; i < z; i++) {
+// 			numInp.push(arrNum[1 * dec]);
+// 		}
+// 	} else {
+// 		for (let i = 0; i < -z; i++) {
+// 			numInp.push(arrNum[1 * dec]);
+// 		}
+// 		numInp.push(arrNum[5 * dec]);
+// 	}
+// 	return numInp;
+// }
+
+// console.log(solution(1));
+
+// function solution(number) {
+// 	return [
+// 		{ threshold: 1000, char: 'M' },
+// 		{ threshold: 900, char: 'CM' },
+// 		{ threshold: 500, char: 'D' },
+// 		{ threshold: 400, char: 'CD' },
+// 		{ threshold: 100, char: 'C' },
+// 		{ threshold: 90, char: 'XC' },
+// 		{ threshold: 50, char: 'L' },
+// 		{ threshold: 40, char: 'XL' },
+// 		{ threshold: 10, char: 'X' },
+// 		{ threshold: 9, char: 'IX' },
+// 		{ threshold: 5, char: 'V' },
+// 		{ threshold: 4, char: 'IV' },
+// 		{ threshold: 1, char: 'I' },
+// 	].reduce(function (prev, curr, idx, arr) {
+// 		while (number >= curr.threshold) {
+// 			prev += curr.char;
+// 			number -= curr.threshold;
+// 		}
+
+// 		return prev;
+// 	}, '');
+// }
+
+// console.log(solution(22999));
+
+// doSomething().then(doSomethingElse).then(finalHandler);
+// function doSomething() {
+// 	const a = 5;
+// 	const b = 6;
+// 	const z = a + b;
+// 	console.log('🚀 1', z);
+// 	return Promise.resolve(z);
+// }
+// function doSomethingElse(z) {
+// 	return Promise.resolve(z => {
+// 		const q = 7;
+// 		let w = 0;
+// 		console.log('🚀 2', z);
+// 		setTimeout(() => {
+// 			w = q * z;
+// 			console.log('🚀 3', z);
+// 		}, 2000);
+// 	});
+// }
+// function finalHandler(w) {
+// 	const r = 10;
+// 	let v = 0;
+// 	console.log('🚀 4');
+// 	setTimeout(() => {
+// 		v = w(r) * r;
+// 		console.log('🚀 5', v);
+// 	}, 3000);
+// 	const n = w(r) / r;
+// 	console.log('🚀 6', n);
+// }
+
+// function moveZeros(arr) {
+// 	const arrayZero = arr.filter(item => item === 0);
+// 	console.log('🚀 ~ file: test.js:983 ~ moveZeros ~ arrayZero:', arrayZero);
+// 	const arrayNoZero = arr.filter(item => item !== 0);
+// 	console.log(
+// 		'🚀 ~ file: test.js:985 ~ moveZeros ~ arrayNoZero:',
+// 		arr.filter(item => item !== 0) + arr.filter(item => item === 0)
+// 	);
+// 	return [...arr.filter(item => item !== 0), ...arr.filter(item => item === 0)];
+// }
+
+// console.log(moveZeros([false, 2, 0, 1, 0, 1, 0, 3, 0, 1]));
+
+// function findUniq(arr) {
+// 	let x = arr.filter((value, i, arr) => {
+// 		let newArr = [...arr];
+// 		let element = newArr.splice(i, i + 1);
+// 		let x = element[0];
+// 		if (newArr.indexOf(x) === -1) {
+// 			return x;
+// 		}
+// 	});
+// 	return x[0];
+// }
+
+// function findUniq(arr) {
+// 	return arr.find((item, index) => arr.indexOf(item) === arr.lastIndexOf(item));
+// }
+
+// console.log(findUniq([1, 1, 1, 1, 0.55, 1]));
+
+// function copy(arr, num) {
+// 	let newArr = [];
+// 	while (num >= 1) {
+// 		// newArr.push(...arr);
+// 		// newArr = [...newArr];
+// 		newArr = [...newArr, ...arr];
+// 		num--;
+// 	}
+// 	return newArr;
+// }
+
+// console.log(copy([1, 2, 3, 4, 5], 5));
+
+// function perimeter(n) {
+// 	let arr = [1];
+// 	if (n > 1) {
+// 		arr.push(1);
+// 	}
+// 	for (let i = 2; i <= n; i++) {
+// 		arr[i] = arr[i - 2] + arr[i - 1];
+// 	}
+// 	return arr.reduce((pv, cv, i, arr) => (pv = pv + cv * 4), 0);
+// }
+
+// console.log(perimeter(5));
