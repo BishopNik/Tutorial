@@ -1023,14 +1023,11 @@
 // console.log(copy([1, 2, 3, 4, 5], 5));
 
 // function perimeter(n) {
-// 	let arr = [1];
-// 	if (n > 1) {
-// 		arr.push(1);
-// 	}
-// 	for (let i = 2; i <= n; i++) {
-// 		arr[i] = arr[i - 2] + arr[i - 1];
+// 	const arr = [0, 1];
+// 	for (let i = 1; i <= n; i++) {
+// 		arr.push(arr[i - 1] + arr[i]);
 // 	}
 // 	return arr.reduce((pv, cv, i, arr) => (pv = pv + cv * 4), 0);
 // }
 
-// console.log(perimeter(5));
+// console.log(perimeter(50));
