@@ -1031,3 +1031,15 @@
 // }
 
 // console.log(perimeter(50));
+
+const refBtn = document.querySelector('.test');
+refBtn.addEventListener('click', onClick);
+
+function onClick(evt) {
+	const parentDiv = evt.target.closest('.card');
+
+	if (parentDiv) {
+		const parentId = parentDiv.dataset.id;
+		console.log('ID главного элемента:', parentId);
+	}
+}
