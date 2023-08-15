@@ -609,3 +609,25 @@ a {
 .section__box-1:checked ~ .socset {
   display: block;
 }
+
+/* .input_container{
+  text-align: center;
+  margin-top: 100px;
+}
+
+.input_search {
+  display: inline-block;
+  width: 550px;
+  padding: 20px 30px;
+  font-size: 24px;
+}
+
+.button_alarm {
+  width: 300px;
+  height: 100px;
+  cursor: pointer;
+  border: 1px solid #000000;
+  border-radius: 8px;
+  box-shadow: 6px 5px 5px 0px rgba(0,0,0,0.75);
+  font-size: 24px;
+} */

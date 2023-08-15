@@ -1032,55 +1032,55 @@
 
 // console.log(perimeter(50));
 
-const refBtn = document.querySelector('.test');
-refBtn.addEventListener('click', onClick);
+// const refBtn = document.querySelector('.test');
+// refBtn.addEventListener('click', onClick);
 
-function onClick(evt) {
-	const parentDiv = evt.target.closest('.card');
+// function onClick(evt) {
+// 	const parentDiv = evt.target.closest('.card');
 
-	if (parentDiv) {
-		const parentId = parentDiv.dataset.id;
-		console.log('ID главного элемента:', parentId);
-	}
-}
+// 	if (parentDiv) {
+// 		const parentId = parentDiv.dataset.id;
+// 		console.log('ID главного элемента:', parentId);
+// 	}
+// }
 
 // function add(a, b) {
 // 	return a * b;
 // }
 
-function add(a, b) {
-	let sum = 0;
-	for (let i = 1; i <= a; i += 1) {
-		sum += i + b;
-	}
-	return sum;
-}
+// function add(a, b) {
+// 	let sum = 0;
+// 	for (let i = 1; i <= a; i += 1) {
+// 		sum += i + b;
+// 	}
+// 	return sum;
+// }
 
-localStorage.setItem('foo', add);
+// localStorage.setItem('foo', add);
 
-const a = 8;
-const b = 5;
-const codeString = localStorage.getItem('foo');
+// const a = 8;
+// const b = 5;
+// const codeString = localStorage.getItem('foo');
 
-try {
-	const result = eval(`(${codeString})(a, b)`);
-	console.log('🚀 result:', result);
-} catch (error) {
-	console.log(error);
-}
+// try {
+// 	const result = eval(`(${codeString})(a, b)`);
+// 	console.log('🚀 result:', result);
+// } catch (error) {
+// 	console.log(error);
+// }
 
-const cart = new Map();
+// const cart = new Map();
 
-function addToCart(item) {
-	if (cart.has(item)) {
-		cart.set(item, cart.get(item) + 1);
-	} else {
-		cart.set(item, 1);
-	}
-}
+// function addToCart(item) {
+// 	if (cart.has(item)) {
+// 		cart.set(item, cart.get(item) + 1);
+// 	} else {
+// 		cart.set(item, 1);
+// 	}
+// }
 
-addToCart('item1');
-addToCart('item2');
-addToCart('item1'); // Количество item1 увеличится на 1
+// addToCart('item1');
+// addToCart('item2');
+// addToCart('item1'); // Количество item1 увеличится на 1
 
-console.log(cart); // Выведет: Map { 'item1' => 2, 'item2' => 1 }
+// console.log(cart); // Выведет: Map { 'item1' => 2, 'item2' => 1 }
