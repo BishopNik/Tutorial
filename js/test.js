@@ -1084,3 +1084,17 @@
 // addToCart('item1'); // Количество item1 увеличится на 1
 
 // console.log(cart); // Выведет: Map { 'item1' => 2, 'item2' => 1 }
+
+async function fetchUser() {
+	try {
+		const response = await fetch('https://restcountries.com/v3.1/nme/Ukraine');
+		if (!response.ok) {
+			throw new Error(response.statusText);
+		}
+		const data = await response.json();
+		console.log(data);
+	} catch (err) {
+		console.log(err);
+	}
+}
+fetchUser();
